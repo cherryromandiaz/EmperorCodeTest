@@ -1,4 +1,13 @@
+using TestProject.Interfaces;
+using TestProject.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient("NewsFeed", client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
+builder.Services.AddSingleton<INewsFeedService, NewsFeedService>();
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
