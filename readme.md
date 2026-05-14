@@ -11,7 +11,7 @@ https://raw.githubusercontent.com/EmperorWorks/EmperorCodeTest/refs/heads/main/x
 
 into this umbraco page https://localhost:44330/news/  (the port may differ on your version!)
 
-The feed URL should be manageable in the CMS, usie the existing property or move it if it makes sense 
+The feed URL should be manageable in the CMS, use the existing property or move it if it makes sense 
 
 Each article should show:
 
