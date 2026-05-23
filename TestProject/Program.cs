@@ -7,6 +7,7 @@ builder.Services.AddHttpClient("NewsFeed", client =>
 {
     client.Timeout = TimeSpan.FromSeconds(10);
 });
+builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<INewsFeedService, NewsFeedService>();
 
 builder.CreateUmbracoBuilder()

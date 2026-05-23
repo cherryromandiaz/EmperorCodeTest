@@ -27,6 +27,7 @@
             var description = item.Description.Length > 100
                 ? item.Description[..100] + "..."
                 : item.Description;
+            var imageAltText = string.IsNullOrWhiteSpace(item.Title) ? "News article image" : item.Title;
             var day = item.PublishDate.Day;
             var suffix = day switch
             {
@@ -37,10 +38,7 @@
             };
             var formattedDate = $"{day}{suffix} {item.PublishDate:MMMM yyyy}";
         <article class="news-item">
-          @if (!string.IsNullOrEmpty(item.ImageUrl))
-          {
-          <img src="@item.ImageUrl" alt="@item.Title">
-          }
+          <img src="@item.DisplayImageUrl" alt="@imageAltText" data-fallback-src="@NewsFeedItem.FallbackImageUrl">
           <div class="news-content">
             <h2>@item.Title</h2>
             <p class="date">@formattedDate</p>

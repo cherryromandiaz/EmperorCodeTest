@@ -44,6 +44,9 @@
                         }), $(".nav-link").click(function(e) {
                             $(".mobile-nav").removeClass("mobile-nav--open"), $(".header").removeClass("header--hide"),
                                 $("body").removeClass("no-scroll"), $("#toggle-nav").removeClass("active")
+                        }), $("img[data-fallback-src]").on("error", function() {
+                            var e = $(this), o = e.attr("data-fallback-src");
+                            e.attr("src") !== o && e.attr("src", o)
                         })
                     })
                 }()
